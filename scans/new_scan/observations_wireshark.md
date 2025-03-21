@@ -1,11 +1,13 @@
-# 🛠 Nmap SYN Scan (-sS) - Observation & Wireshark Analysis  
+# 🛠 Nmap Simple_Scan - Observation & Wireshark Analysis  
 
 ## 🔍 Observation  
-Despite not using root privileges, Nmap performed a **SYN scan (-sS), executing a *two-way handshake* instead of a full **three-way handshake (-sT)** on Metasploitable.  
+Despite not using root privileges, Nmap Simple_Scan performed a **SYN scan (-sS), executing a *two-way handshake* instead of the default , a full **three-way handshake (-sT)** on Metasploitable.  
 
 This indicates that:  
 - The Metasploitable VM allows raw packet transmission.  
-- Nmap can execute SYN scans without requiring sudo.  
+- User or system may have implicit permissions to send raw packets.
+- A security policy or kernel setting might be enabling this behavior.
+- Nmap may have been modified or configured differently in the Kali VM.
 
 ---
 
