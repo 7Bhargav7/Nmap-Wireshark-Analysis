@@ -66,9 +66,9 @@ Wireshark is used to *capture traffic from Nmap scans*, allowing deeper insight 
 - *Firewall & IDS/IPS behaviors*  
 
 ## 📂 *Structure of the Repository*  
-📁 */scans/* → Nmap scan results & explanations  
-📁 */wireshark/* → Packet captures & analysis screenshots  
-📁 */README.md* → Overview of scans & findings  
+📁 scans → Nmap & Wireshark scan results & observations 
+
+📁 README.md → Overview of scans & findings  
 
 ## 🎯 *Goals of the Project*  
 ✅ *Learn* how different Nmap scans interact with *open & filtered ports*  
