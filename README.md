@@ -44,7 +44,7 @@ This project is a structured learning journey to deeply understand network scann
 ## 📂 Repository Structure
 
 ```
-nmap-project/
+Nmap-Wireshark-Analysis/
 │
 ├── scans/
 │   ├── OS-detection_scan.md
@@ -52,8 +52,7 @@ nmap-project/
 │   ├── ping_scan.md
 │   └── simple_scan.md
 │
-├── README.md
-└── documentation/
+└── README.md
 ```
 
 ## 🚀 Learning Objectives
