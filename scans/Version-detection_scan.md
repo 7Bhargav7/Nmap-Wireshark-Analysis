@@ -1,137 +1,106 @@
+# 🛠 Nmap Service Version Scan (-sV) - Detailed Observation & Wireshark Analysis
 
-# 🛠 Nmap Service Version scan (-sV) - Observation & Wireshark Analysis  
+## 📋 Initial Scan Overview
 
-## 🖥 *Nmap Scan Output*  
+![Nmap Scan Command](https://github.com/user-attachments/assets/b00840df-2005-4779-b5a9-7dc8d101968e)
 
-Below is the command run and its corresponding output:
+```bash
+nmap -sV <target-ip>
+```
 
-### 🔹 *Scan Command:*
-![Scan-3](https://github.com/user-attachments/assets/b00840df-2005-4779-b5a9-7dc8d101968e)
+> **💡 Key Insights:**
+> - `-sV` flag enables service and version detection
+> - Completes full TCP three-way handshake
+> - Probes services to extract detailed information
 
+## 🕵️ Scanning Methodology
 
+### 🔬 Service Detection Process
 
-## 🔍 Observation  
+1. **TCP Three-Way Handshake**
+   - Establishes full TCP connection
+   - Ensures reliable data exchange
+   - Unlike SYN scan, completes full connection
 
-The scan checks for open TCP ports and then probes for specific services on common ports such as HTTPS, SSH, FTP, SMTP, MySQL, and SMB. After establishing a TCP connection using a full three-way handshake, Nmap sends a probe to interact with each detected service.
+2. **Service Probing**
+   - Sends targeted probes to open ports
+   - Retrieves banner responses
+   - Extracts critical service information
 
-> Probe: A probe is a packet or set of packets sent by Nmap to a service to elicit a response, which helps identify the service's characteristics.
+### 🎯 Common Service Targets
 
+| Port | Service | Protocol | Purpose |
+|------|---------|----------|---------|
+| 22   | SSH     | Secure Shell | Remote Access |
+| 21   | FTP     | File Transfer | File Sharing |
+| 25   | SMTP    | Mail Transfer | Email Communication |
+| 443  | HTTPS   | Secure Web | Encrypted Web Traffic |
+| 3306 | MySQL   | Database | Data Management |
+| 445  | SMB     | File Sharing | Windows Network |
 
+## 🌐 Detailed Wireshark Analysis
 
-Based on the banner response received from each service, Nmap is able to determine key details.
+### 1️⃣ HTTPS (Port 443)
+![HTTPS Scan](https://github.com/user-attachments/assets/5aed12aa-6b70-49ed-b63e-fbd9d7a830d9)
 
-> Banner Response: The banner is the initial data sent by a service when a connection is established. It typically reveals the service name, version number, and sometimes the underlying operating system or additional software details.
+- **Key Characteristics:**
+  - TCP Handshake
+  - TLS Negotiation
+  - Encrypted Data Exchange
 
+### 2️⃣ SSH (Port 22)
+![SSH Scan](https://github.com/user-attachments/assets/2956aa03-ce35-48f7-ba86-2cff2e11716c)
 
----
+- **Key Characteristics:**
+  - Secure Remote Access
+  - Encrypted Communication
+  - Service Version Probe
 
+### 3️⃣ SMB (Port 445)
+![SMB Scan](https://github.com/user-attachments/assets/a7648f22-d21f-4202-86e4-12f383f3d940)
 
-**TCP Three-Way Handshake:** Unlike the SYN scan (-sS), the service version scan (-sV) completes a full TCP connection (SYN → SYN-ACK → ACK) to ensure reliable data exchange.
+- **Key Characteristics:**
+  - Windows File Sharing
+  - Version Detection
+  - Network Resource Sharing
 
-**Service Probing:** After the connection is established on the common ports, Nmap sends probes to obtain a banner response from each service.
+### 4️⃣ MySQL (Port 3306)
+![MySQL Scan](https://github.com/user-attachments/assets/38bb3285-464a-465e-99d6-082d9ff00944)
 
-**Banner Analysis:** The received banner reveals valuable details including-
+- **Key Characteristics:**
+  - Database Service Identification
+  - Version Fingerprinting
+  - Service Details Exposure
 
-_**Service Name**_
+### 5️⃣ FTP (Port 21)
+![FTP Scan](https://github.com/user-attachments/assets/83156a3f-4627-43f7-bf52-994046b09dc0)
 
-_**Version Number**_
+- **Key Characteristics:**
+  - File Transfer Protocol
+  - Software Banner Reveal
+  - Version Information
 
-_**Operating System or Software Information**_
+### 6️⃣ SMTP (Port 25)
+![SMTP Scan](https://github.com/user-attachments/assets/ad227b5d-d512-4c9d-9fa1-f85a9272389e)
 
+- **Key Characteristics:**
+  - Mail Server Communication
+  - Reconnaissance Potential
+  - Service Details Extraction
 
+## 🏁 Conclusion
 
-This detailed probing allows for a deeper understanding of the services running on the target machine.
+**Nmap -sV Scan Provides:**
+- Comprehensive service identification
+- Detailed version information
+- Insights into network infrastructure
 
+> **🚨 Security Warning:** 
+> Always obtain explicit permission before performing network scans. Unauthorized scanning may violate legal and ethical standards.
 
----
-
-
-## 📡 Wireshark Analysis - Service Detection (-sV)  
-
-After running nmap -sV <target-ip>, Wireshark captures show TCP three-way handshakes, followed by probes interacting with detected services.
-
-**HTTPS (443)** is the most common internet-facing service.
-
-**SSH (22)** is widely used in internal networks and remote management.
-
-Other frequently detected ports include:
-
-**FTP (21)** → File transfer service.
-
-**SMTP (25)** → Mail server communication.
-
-**MySQL (3306)** → Database service.
-
-**SMB (445)** → Windows file-sharing protocol.
-
-🔹 Key Observations:
-
-On Metasploitable hosted on  local network , SSH and SMB are more likely to be present, whereas HTTPS may not be as commonly availiable.
-
-
-🔹 Wireshark Packet Captures:
-
-1️⃣ HTTPS(443) - Hyper Text Transfer Protocol Secure
-
-
-![scan-3-80,443](https://github.com/user-attachments/assets/5aed12aa-6b70-49ed-b63e-fbd9d7a830d9)
-
-
-> Wireshark shows a TCP handshake followed by TLS negotiation, ensuring encrypted data exchange.
-
-
-
-1️⃣ SSH (22) - Secure Shell Login
-
-
-![scan-3-22](https://github.com/user-attachments/assets/2956aa03-ce35-48f7-ba86-2cff2e11716c)
-
-
-> SSH provides secure encrypted remote access. Here, Wireshark shows a TCP handshake followed by a service probe.
-
-
-
-2️⃣ SMB (445) - Windows File Sharing
-
-
-![scan-3-445,139](https://github.com/user-attachments/assets/a7648f22-d21f-4202-86e4-12f383f3d940)
-
-
-> SMB is used for file sharing. The scan reveals its presence and version details.
-
-
-
-3️⃣ MySQL (3306) - Database Service
-
-
-![scan-3-3306](https://github.com/user-attachments/assets/38bb3285-464a-465e-99d6-082d9ff00944)
-
-
-> MySQL responses expose database version info, useful for fingerprinting.
-
-
-
-4️⃣ FTP (21) - File Transfer Protocol
-
-
-![scan-3-21](https://github.com/user-attachments/assets/83156a3f-4627-43f7-bf52-994046b09dc0)
-
-
-> FTP servers respond with a banner revealing software details.
-
-
-
-5️⃣ SMTP (25) - Mail Transfer
-
-
-![scan-3-25,587](https://github.com/user-attachments/assets/ad227b5d-d512-4c9d-9fa1-f85a9272389e)
-
-
-> SMTP scans reveal mail server details that may help in reconnaissance.
-
-
-
-
----
-
-✅ This confirms that -sV scans actively probe services after detecting open TCP ports, using responses (banners) to identify software versions.
+## 📚 Key Takeaways
+
+1. Service version scans go beyond port detection
+2. Banner responses reveal critical system information
+3. Wireshark offers granular insights into service interactions
+4. Ethical reconnaissance requires precision and consent
