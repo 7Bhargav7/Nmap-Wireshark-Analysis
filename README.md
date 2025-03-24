@@ -1,77 +1,68 @@
-# *Nmap Scans & Wireshark Analysis*  
-### Exploring Network Scanning & Traffic Analysis in a Local Virtual Lab  
+# 🔍 Nmap Project: Network Scanning & Analysis
 
-## 📌 *Overview*  
-This project documents *Nmap scanning experiments* and *Wireshark packet analysis, performed in a **self-hosted lab* using *Kali Linux* as the scanning system and *Metasploitable* as the target.  
+![875-8750625_turd-png](https://github.com/user-attachments/assets/818be8a3-b35a-4979-8f03-99a22d9b9adc)
 
-The goal is to:  
-- 🔍 *Understand different types of Nmap scans* and their impact on network traffic  
-- 📊 *Analyze packet-level behavior* using Wireshark  
-- 🔥 *Explore open ports in Metasploitable* and their security implications  
 
-## 🛠 *Lab Setup*  
-This project is based on a *static IP network setup* with:  
-- 🖥 *Kali Linux* → Attacker/Scanner  
-- 🖥 *Metasploitable* → Target with multiple open ports  
-- 🌐 *Oracle VirtualBox* → Networking: *Host-Only Adapter*  
+## 📌 Project Overview
 
-## 🔎 *Types of Nmap Scans Covered*  
-Nmap categorizes ports into *6 states*, which are observed in this project:  
-1. *🟢 Open* – The target is accepting connections.  
-2. *🔴 Closed* – The target actively rejects connections.  
-3. *🟡 Filtered* – The port is blocked by a firewall.  
-4. *⚪ Unfiltered* – The port is accessible but Nmap can’t determine its state.  
-5. *🟠 Open|Filtered* – Nmap can’t confirm if it’s open or filtered.  
-6. *🔘 Closed|Filtered* – Nmap can’t confirm if it’s closed or filtered.  
+This project is a structured learning journey to deeply understand network scanning techniques using Nmap in a controlled, ethical laboratory environment.
 
-### 🛡 *Key Nmap Commands Used*  
-This project covers *16 essential Nmap commands* inspired by [Recorded Future's guide](https://www.recordedfuture.com/threat-intelligence-101/tools-and-techniques/nmap-commands), including:  
+## 🎓 Learning Approach
 
-#### *🔹 Basic Scans*  
-- nmap -sn → *Ping scan* (detect live hosts)  
-- nmap -p- → *Scan all 65,535 ports*  
-- nmap -sV → *Service/version detection*  
+### 🔬 Methodology
+- Hands-on experimentation with Nmap scanning techniques
+- Systematic documentation of scan results
+- Analyzing network behaviors and vulnerabilities
+- Building practical cybersecurity skills
 
-#### *🔹 Stealth Scans*  
-- nmap -sS → *SYN scan (half-open scan, avoids detection)*  
-- nmap -f → *Fragmented scan (bypass IDS/IPS)*  
+## 🛠 Lab Environment
 
-#### *🔹 Aggressive & OS Detection*  
-- nmap -A → *Aggressive scan (OS, services, scripts)*  
-- nmap -O → *OS detection*  
+### Infrastructure
+- **Scanner**: Kali Linux
+- **Target**: Metasploitable
+- **Networking**: Oracle VirtualBox Host-Only Adapter
 
-#### *🔹 Firewall Evasion Techniques*  
-- nmap -D → *Decoy scan*  
-- nmap --data-length → *Adds random padding to evade firewalls*  
+## 🔎 Nmap Commands & References
 
-#### *🔹 UDP & Specific Port Scans*  
-- nmap -sU → *UDP scan*  
-- nmap -p → *Scan specific ports*  
+### 🌐 Basic Scans
+- `nmap -sn` → Ping Scan
+- `nmap -p-` → Full Port Scan
+- `nmap -sV` → Service Version Detection
 
-## 🔥 *Common Ports in Metasploitable*  
-Metasploitable has many *open ports by default*, including:  
-- *FTP* (21)  
-- *SSH* (22)  
-- *Telnet* (23)  
-- *SMTP* (25)  
-- *HTTP* (80, 443)  
-- *SMB* (445)  
-- *PostgreSQL* (5432)  
-- *More...*  
+### 🥷 Stealth Techniques
+- `nmap -sS` → SYN Stealth Scan
+- `nmap -f` → Fragmentation Scan
 
-## 🖥 *Wireshark Analysis*  
-Wireshark is used to *capture traffic from Nmap scans*, allowing deeper insight into:  
-- *Packet handshakes & responses*  
-- *How different scans interact with ports*  
-- *Firewall & IDS/IPS behaviors*  
+### 🕵️ Advanced Scans
+- `nmap -A` → Aggressive Scanning
+- `nmap -O` → OS Detection
 
-## 📂 *Structure of the Repository*  
-📁 scans → Nmap & Wireshark scan results & observations 
+### 🛡️ Evasion Methods
+- `nmap -D` → Decoy Scanning
+- `nmap --data-length` → Firewall Evasion
 
-📁 README.md → Overview of scans & findings  
+## 📂 Repository Structure
 
-## 🎯 *Goals of the Project*  
-✅ *Learn* how different Nmap scans interact with *open & filtered ports*  
-✅ *Observe* *packet-level behavior* using *Wireshark*  
-✅ *Understand* how *firewalls & IDS* react to scans  
-✅ *Document* findings for *future reference & learning*
+```
+nmap-project/
+│
+├── scans/
+│   ├── OS-detection_scan.md
+│   ├── Version-detection_scan.md
+│   ├── ping_scan.md
+│   └── simple_scan.md
+│
+├── README.md
+└── documentation/
+```
+
+## 🚀 Learning Objectives
+
+- 🔍 Understand Nmap scanning techniques
+- 📊 Analyze network traffic patterns
+- 🛡️ Learn about network security mechanisms
+- 🧠 Develop practical cybersecurity skills
+
+---
+
+*Disclaimer: This project is for educational purposes only. Always obtain proper authorization before scanning networks.*
