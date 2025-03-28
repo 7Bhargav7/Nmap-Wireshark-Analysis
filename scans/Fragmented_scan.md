@@ -5,6 +5,8 @@
 The Nmap fragmentation scan (`-f`) is a sophisticated network reconnaissance technique designed to bypass intrusion detection systems (IDS) and firewall filters by splitting packets into smaller fragments.
 
 ## 🖥️ Initial Scan Command
+![Scan-6](https://github.com/user-attachments/assets/7214df86-6439-40d3-9200-aafdbcd57995)
+
 
 ```bash
 sudo nmap -f 192.168.56.103
@@ -61,6 +63,8 @@ sudo nmap -f 192.168.56.103
 ## 🔬 Wireshark Analysis
 
 ### Packet Fragmentation Insight
+![Scan-6-ipv4 ](https://github.com/user-attachments/assets/4664f756-877e-4ac6-b65c-dad059382c38)
+
 
 - **Connection Establishment**
   - Initial SYN packet triggers fragmentation
