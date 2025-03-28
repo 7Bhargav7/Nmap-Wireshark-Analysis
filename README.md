@@ -48,6 +48,7 @@ Nmap-Wireshark-Analysis/
 │
 ├── scans/
 │   ├── OS-detection_scan.md
+│   ├── Stealth_scan.md
 │   ├── Version-detection_scan.md
 │   ├── ping_scan.md
 │   └── simple_scan.md
