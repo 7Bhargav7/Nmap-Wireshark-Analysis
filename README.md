@@ -12,7 +12,7 @@ This project is a structured learning journey to deeply understand network scann
 ### 🔬 Methodology
 - Hands-on experimentation with Nmap scanning techniques
 - Systematic documentation of scan results
-- Analyzing network behaviors and vulnerabilities
+- Analyzing network behaviors and vulnerabilities using wireshark
 - Building practical cybersecurity skills
 
 ## 🛠 Lab Environment
