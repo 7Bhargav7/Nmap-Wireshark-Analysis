@@ -25,7 +25,7 @@ This project is a structured learning journey to deeply understand network scann
 ## 🔎 Nmap Commands & References
 
 ### 🌐 Basic Scans
-- `nmap -sn` → Ping Scan
+- `nmap -sn/sP` → Ping Scan
 - `nmap -p-` → Full Port Scan
 - `nmap -sV` → Service Version Detection
 
