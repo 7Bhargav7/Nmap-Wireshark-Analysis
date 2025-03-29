@@ -47,6 +47,7 @@ This project is a structured learning journey to deeply understand network scann
 Nmap-Wireshark-Analysis/
 │
 ├── scans/
+│   ├── Decoy_scan.md
 │   ├── Fragmented_scan.md
 │   ├── OS-detection_scan.md
 │   ├── Stealth_scan.md
