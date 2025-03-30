@@ -39,7 +39,6 @@ This project is a structured learning journey to deeply understand network scann
 
 ### 🛡️ Evasion Methods
 - `nmap -D` → Decoy Scanning
-- `nmap --data-length` → Firewall Evasion
 
 ## 📂 Repository Structure
 
