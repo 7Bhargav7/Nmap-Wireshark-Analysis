@@ -34,7 +34,6 @@ This project is a structured learning journey to deeply understand network scann
 - `nmap -f` → Fragmentation Scan
 
 ### 🕵️ Advanced Scans
-- `nmap -A` → Aggressive Scanning
 - `nmap -O` → OS Detection
 
 ### 🛡️ Evasion Methods
